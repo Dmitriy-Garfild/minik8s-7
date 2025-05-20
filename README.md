@@ -328,6 +328,12 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt
 cat tls.crt | base64
 cat tls.key | base64
 ```
+- самый лучший способ создать секрет описан ниже - не нужно yaml - портянку писать, но я напишу оба способа. 
+
+```sh
+ kubectl create secret tls tls-secret --cert=tls.crt --key=tls.key -n netology
+```
+
 - [secret2.yaml](secret2.yaml)
     <details><summary>secret2.yaml</summary>
 
