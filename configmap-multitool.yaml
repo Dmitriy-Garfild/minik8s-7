@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-multitool
+  labels:
+    app: multitool-ports
+  namespace: netology
+data:
+  http: "8080"
+  https: "8443"
+...

@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-nginx
+  labels:
+    app: nginx-page
+  namespace: netology
+data:
+  index.html: |
+    Welcom to NGINX!
+    ConfigMap Dim online
+...

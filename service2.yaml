@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-ng-ssl
+  namespace: netology
+spec:
+  selector:
+    app: nginx-ssl
+  type: ClusterIP
+  ports:
+  - name: nginx
+    port: 80
+    targetPort: nginx-web
+...

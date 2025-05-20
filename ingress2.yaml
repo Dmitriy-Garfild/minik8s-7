@@ -1,0 +1,30 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-ssl
+  labels:
+    type: ingress
+    ssl: enable
+    app: nginx
+  namespace: netology
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: "nginx"
+  rules:
+    - host: kuber.dim.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: svc-ng-ssl
+                port:
+                  name: nginx
+  tls:
+    - hosts:
+        - kuber.dim.local
+      secretName: secret-tls
+...
